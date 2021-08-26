@@ -17,20 +17,20 @@ import java.util.List;
 @RestController
 public class HttpMappingRestController {
 
-    private PersonRepository siswaDao;
+    private PersonRepository personRepository;
     private ExcelGenerator excel;
 
     @Autowired
-    public HttpMappingRestController(PersonRepository siswaDao, ExcelGenerator excel) {
-        this.siswaDao = siswaDao;
+    public HttpMappingRestController(PersonRepository personRepository, ExcelGenerator excel) {
+        this.personRepository = personRepository;
         this.excel = excel;
     }
 
     @GetMapping("/export")
-    public ResponseEntity<InputStreamResource> excelSiswaReport() throws Exception {
-        List<Person> siswas = siswaDao.findAll();
+    public ResponseEntity<InputStreamResource> excelPersonReport() throws Exception {
+        List<Person> persons = personRepository.findAll();
 
-        ByteArrayInputStream in = excel.exportExcel(siswas);
+        ByteArrayInputStream in = excel.exportExcel(persons);
 
         HttpHeaders headers = new HttpHeaders();
         headers.add("Content-Disposition", "attachment; filename=siswa.xlsx");
