@@ -85,11 +85,11 @@ public class ExcelGenerator {
 
             Row row = sheet.getRow(i);
 
-            String nama = row.getCell(1).getStringCellValue();
-            String kelas = row.getCell(2).getStringCellValue();
-            String jurusan = row.getCell(3).getStringCellValue();
+            String full_name = row.getCell(1).getStringCellValue();
+            String address = row.getCell(2).getStringCellValue();
+            String phone_number = row.getCell(3).getStringCellValue();
 
-            personRepository.save(new Person(0, nama, kelas, jurusan));
+            personRepository.save(new Person(0, full_name, address, phone_number));
         }
 
     }

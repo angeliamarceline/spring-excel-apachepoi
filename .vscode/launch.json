@@ -1,0 +1,14 @@
+{
+    "configurations": [
+        {
+            "type": "java",
+            "name": "Spring Boot-SpringbootExportNImportApplication<springboot_export_n_import>",
+            "request": "launch",
+            "cwd": "${workspaceFolder}",
+            "console": "internalConsole",
+            "mainClass": "com.fluex404.springboot_export_n_import.SpringbootExportNImportApplication",
+            "projectName": "springboot_export_n_import",
+            "args": ""
+        }
+    ]
+}
